@@ -28,7 +28,7 @@ angular.module('starter', ['ionic'])
     $scope.news = [];
 
     $scope.loadNews = function() {
-        $http.get('localhost/test.php')
+        $http.get('http://localhost/test.php')
             .success(function() {
                 console.log('Oh, yeah!');
             })
