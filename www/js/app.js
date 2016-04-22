@@ -27,5 +27,9 @@ angular.module('starter', ['ionic'])
   
   $scope.news = [];
 
+  $scope.loadNews = function(){
+    
+  }
+
 
 }])
