@@ -23,12 +23,12 @@ angular.module('starter', ['ionic'])
   });
 })
 
-.controller('NewsController', ['$scope', function($scope){
+.controller('NewsController', ['$scope','$http', function($scope, $http){
   
   $scope.news = [];
 
   $scope.loadNews = function(){
-    
+
   }
 
 
