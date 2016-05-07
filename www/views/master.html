@@ -1,14 +1,14 @@
 <ion-view view-title="News">
     <ion-content>
         <div>
-            <div class="padding" collection-repeat="newItem in news"
+            <div class="padding" collection-repeat="newsItem in news"
                 ng-click="openDetail(newItem)">
                 <div class="item">
-                    <h2>{{newItem.title}}</h2>
+                    <h2>{{newsItem.title}}</h2>
                 </div>
                 <div class="item item-body">
-                    <img class="full-image" src="delorean.jpg">
-                    <p ng-bind="newItem.createdDate | date:'dd/MM/yyyy'">{{}}</p>
+                    <img class="full-image" src="{{newsItem.imageUrl}}">
+                    <p ng-bind="newsItem.createdDate | date:'dd/MM/yyyy'">{{}}</p>
                 </div>
 
             </div>
