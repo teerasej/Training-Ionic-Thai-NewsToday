@@ -5,9 +5,9 @@ app.controller('MasterController', ['$scope', '$http', '$state', function($scope
     $scope.loadNews = function() {
 
         var mockupNews = [
-            {title:'A', 'createdDate': new Date(), imgUrl:'', content:'blah blah blah' },
-            {title:'B', 'createdDate': new Date(), imgUrl:'', content:'blah blah blah' },
-            {title:'C', 'createdDate': new Date(), imgUrl:'', content:'blah blah blah' }
+            {title:'A', 'createdDate': new Date(), imageUrl:'', content:'blah blah blah' },
+            {title:'B', 'createdDate': new Date(), imageUrl:'', content:'blah blah blah' },
+            {title:'C', 'createdDate': new Date(), imageUrl:'', content:'blah blah blah' }
         ];
 
         $scope.news = mockupNews;
