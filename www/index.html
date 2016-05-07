@@ -16,30 +16,19 @@
     <script src="cordova.js"></script>
     <!-- your app's js -->
     <script src="js/app.js"></script>
+    <script src="js/controller/MasterController.js"></script>
+    <script src="js/controller/DetailControler.js"></script>
 </head>
 
 <body ng-app="starter">
-    <ion-pane ng-controller="NewsController">
-        <ion-header-bar class="bar-stable">
-            <h1 class="title">News Today</h1>
-        </ion-header-bar>
-        <ion-content>
-            <div>
-                <div class="padding" collection-repeat="newItem in news">
-                    <div class="item">
-                        <h2>Title</h2>
-                        <p>November 05, 1955</p>
-                    </div>
-                    <div class="item item-body">
-                        <img class="full-image" src="delorean.jpg">
-                        <!-- <p>
-                            <a href="#" class="button button-block">More</a>
-                        </p> -->
-                    </div>
-                </div>
-            </div>
-        </ion-content>
-    </ion-pane>
+    <ion-nav-bar>
+        <ion-nav-back-button class="button-clear">
+          <i class="ion-arrow-left-c"></i> Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view animation="slide-left-right">
+        <!-- Center content -->
+    </ion-nav-view>
 </body>
 
 </html>
