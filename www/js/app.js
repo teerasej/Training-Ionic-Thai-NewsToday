@@ -23,3 +23,19 @@ angular.module('starter', ['ionic'])
     });
 })
 
+.config(function($stateProvider, $urlRouterProvider){
+
+    $stateProvider.state('master', {
+        url: '/home',
+        templateUrl: 'views/master.html'
+    })
+
+    $stateProvider.state('detail', {
+        url: '/detail',
+        templateUrl: 'views/detail.html'
+    })
+
+    $urlRouterProvider.otherwise('/home');
+
+})
+
