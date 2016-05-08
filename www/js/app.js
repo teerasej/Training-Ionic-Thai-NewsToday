@@ -23,19 +23,3 @@ angular.module('starter', ['ionic'])
     });
 })
 
-.controller('NewsController', ['$scope', '$http', function($scope, $http) {
-
-    $scope.news = [];
-
-    $scope.loadNews = function() {
-        $http.get('http://localhost/test.php')
-            .success(function() {
-                console.log('Oh, yeah!');
-            })
-            .error(function() {
-                console.log('Error.');
-            })
-    }
-
-
-}])
