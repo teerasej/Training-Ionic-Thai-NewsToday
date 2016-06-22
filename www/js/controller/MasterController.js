@@ -1,22 +1,16 @@
-app.controller('MasterController', ['$scope', '$http', '$state', function($scope, $http, $state) {
+app.controller('MasterController', ['$scope', '$state','NewsService', function($scope, $state, NewsService ) {
 
     $scope.news = [];
 
     $scope.loadNews = function() {
-
-        var mockupNews = [
-            {title:'A', 'createdDate': new Date(), imageUrl:'', content:'blah blah blah' },
-            {title:'B', 'createdDate': new Date(), imageUrl:'', content:'blah blah blah' },
-            {title:'C', 'createdDate': new Date(), imageUrl:'', content:'blah blah blah' }
-        ];
-
+        var mockupNews = [];
         $scope.news = mockupNews;
     }
 
-    $scope.openDetail = function(newsItem){
-        $state.go('detail', { item: newsItem } )
+    $scope.showDetail = function(newsItem){
+        NewsService.selectedNews = newsItem;
+        $state.go('detail');
     }
-
 
 
     $scope.loadNews();

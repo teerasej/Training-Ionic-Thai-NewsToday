@@ -2,7 +2,7 @@
     <ion-content>
         <div>
             <div class="padding" collection-repeat="newsItem in news"
-                ng-click="openDetail(newItem)">
+                ng-click="showDetail(newsItem)">
                 <div class="item">
                     <h2>{{newsItem.title}}</h2>
                 </div>
@@ -10,7 +10,6 @@
                     <img class="full-image" src="{{newsItem.imageUrl}}">
                     <p ng-bind="newsItem.createdDate | date:'dd/MM/yyyy'">{{}}</p>
                 </div>
-
             </div>
         </div>
     </ion-content>
