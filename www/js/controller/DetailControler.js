@@ -1,8 +1,8 @@
-app.controller('DetailController', ['$scope', '$stateParams' , function($scope, $stateParams) {
+app.controller('DetailController', ['$scope','$stateParams', 'NewsService' , function($scope, $stateParams, NewsService) {
 
 
-    console.log($stateParams);
-    
-    
+    // $scope.newsItem = NewsService.selectedNews;
+    var title = $stateParams.title;
+    $scope.title = title;
 
 }])
