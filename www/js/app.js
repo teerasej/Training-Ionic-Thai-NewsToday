@@ -35,7 +35,7 @@ var app = angular.module('starter', ['ionic'])
 
     $stateProvider
     .state('detail', {
-      url: '/detail/:item',
+      url: '/detail',
       templateUrl: 'views/detail.html',
       controller: 'DetailController'
     })
