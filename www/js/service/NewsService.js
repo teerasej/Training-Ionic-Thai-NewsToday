@@ -1,4 +1,4 @@
-app.service('NewsService', function($http) {
+app.service('NewsService', function($http, $ionicLoading) {
 
   return {
 
@@ -15,12 +15,16 @@ app.service('NewsService', function($http) {
       } else {
         console.info('Accessing ' + this.url);
 
+        $ionicLoading.show();
+
         $http.get(this.url)
           .success(function(data) {
+            $ionicLoading.hide();
             console.dir(data);
             callBackFunction(data);
           })
           .error(function(error) {
+            $ionicLoading.hide();
             console.error('Error');
           })
       }
