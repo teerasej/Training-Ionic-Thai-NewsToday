@@ -7,7 +7,11 @@ app.controller('MasterController', ['$scope', '$state','NewsService', function($
     }
 
     $scope.updateNews = function(news){
-        console.log('Hooray! news from web api is here.');
+
+      for (var i = 0; i < news.length; i++) {
+        news[i].imageUrl = "http://192.168.1.123:8888/news/" + news[i].imageUrl;
+      }
+
         $scope.news = news;
     }
 

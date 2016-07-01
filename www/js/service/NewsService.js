@@ -1,29 +1,33 @@
-app.service('NewsService', function($http){
+app.service('NewsService', function($http, $ionicLoading) {
 
-	return {
+  return {
 
-		url: 'http://localhost:8888/news/',
+    url: 'http://localhost:8888/news/',
 
-		selectedNews: {},
+    selectedNews: {},
 
-		loadNews : function(callBackFunction, count){
+    loadNews: function(callBackFunction, count) {
 
-			console.log('Going to call Web API');
+      console.log('Going to call Web API');
 
-			if(count && count > 0){
-				console.info('Not implemented');
-			} else {
-				console.info('Accessing ' + this.url);
+      if (count && count > 0) {
+        console.info('Not implemented');
+      } else {
+        console.info('Accessing ' + this.url);
 
-				$http.get(this.url)
-					.success(function(data){
-						console.dir(data);
-						callBackFunction(data);
-					})
-					.error(function(error){
-						console.error('Error');
-					})
-			}
-		}
-	};
+        $ionicLoading.show();
+
+        $http.get(this.url)
+          .success(function(data) {
+            $ionicLoading.hide();
+            console.dir(data);
+            callBackFunction(data);
+          })
+          .error(function(error) {
+            $ionicLoading.hide();
+            console.error('Error');
+          })
+      }
+    }
+  };
 })
