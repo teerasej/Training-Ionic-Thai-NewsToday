@@ -1,7 +1,7 @@
 <ion-view view-title="Detail">
   <ion-content padding="true">
   	<h1>{{newsItem.title}}</h1>
-    <img ng-src="{{newsItem.imageUrl}}"/>
+    <img class="full-image" ng-src="{{newsItem.imageUrl}}"/>
      <p ng-bind="newsItem.createdDate | date:'dd/MM/yyyy'">{{}}</p>
     <div>
     	<p>{{newsItem.content}}</p>
