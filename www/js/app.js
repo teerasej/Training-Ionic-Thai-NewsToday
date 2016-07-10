@@ -26,8 +26,15 @@ var app = angular.module('starter', ['ionic'])
 .config(function($stateProvider, $urlRouterProvider){
 
     $stateProvider
-    .state('home', {
-      url: '/home',
+    .state('sign-in', {
+      url: '/sign-in',
+      templateUrl: 'views/sign-in.html',
+      controller: 'UserController'
+    })
+
+    $stateProvider
+    .state('master', {
+      url: '/master',
       templateUrl: 'views/master.html',
       controller: 'MasterController'
     })
@@ -40,5 +47,5 @@ var app = angular.module('starter', ['ionic'])
       controller: 'DetailController'
     })
 
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/sign-in');
 })
