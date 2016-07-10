@@ -10,9 +10,12 @@
                 <span class="input-label">Password</span>
                 <input type="password" ng-model="password">
               </label>
-              <button class="button button-block button-positive">
+              <button class="button button-block button-positive" ng-click="signIn(username, password)">
                   Sign In
               </button>
+              <p class="statusMessage">
+                {{ statusMessage }}
+              </p>
             </div>
         </div>
     </ion-content>
