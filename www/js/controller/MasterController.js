@@ -1,26 +1,35 @@
-app.controller('MasterController', ['$scope', '$state','NewsService', function($scope, $state, NewsService ) {
+app.controller('MasterController', ['$scope', '$state', 'NewsService', '$ionicLoading', function($scope, $state, NewsService, $ionicLoading) {
 
-    $scope.news = [];
+  $scope.news = [];
 
-    $scope.loadNews = function() {
-        NewsService.loadNews($scope.updateNews);
-    }
+  $scope.loadNews = function() {
 
-    $scope.updateNews = function(news){
+    $ionicLoading.show();
 
-      for (var i = 0; i < news.length; i++) {
-        news[i].imageUrl = "http://192.168.1.123:8888/news/" + news[i].imageUrl;
-      }
+    NewsService.loadNews()
+      .success(function(data) {
 
-        $scope.news = news;
-    }
+        $ionicLoading.hide();
 
-    $scope.showDetail = function(newsItem){
-        NewsService.selectedNews = newsItem;
-        $state.go('detail');
-    }
+        for (var i = 0; i < data.length; i++) {
+          data[i].imageUrl = NewsService.endpointUrl + data[i].imageUrl;
+        }
+        console.dir(data);
+        $scope.news = data;
 
-    $scope.loadNews();
+      })
+      .error(function(error) {
+        $ionicLoading.hide();
+        console.error('Error');
+      })
+  }
+
+  $scope.showDetail = function(newsItem) {
+    NewsService.selectedNews = newsItem;
+    $state.go('detail');
+  }
+
+  $scope.loadNews();
 
 
 }])
