@@ -13,6 +13,20 @@ app.service('NewsService', function($http) {
       } else {
         return $http.get(this.endpointUrl);
       }
+    },
+
+    signIn: function(user, pass) {
+      signInUrl = endpointUrl + 'login';
+
+      var postObject = {
+        username: user,
+        password: pass
+      };
+
+      var postBody = JSON.strigify(postBody);
+
+      return $http.post(signInUrl, postBody);
     }
+
   };
 })
