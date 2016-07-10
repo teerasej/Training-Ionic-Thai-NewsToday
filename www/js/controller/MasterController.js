@@ -4,6 +4,11 @@ app.controller('MasterController', ['$scope', '$state','NewsService', function($
 
     $scope.loadNews = function() {
         var mockupNews = [];
+
+        // for (var i = 0; i < data.length; i++) {
+        //   data[i].imageUrl = NewsService.endpointUrl + data[i].imageUrl;
+        // }
+
         $scope.news = mockupNews;
     }
 
