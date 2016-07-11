@@ -8,11 +8,8 @@ app.service('NewsService', function($http) {
 
     loadNews: function(count) {
 
-      if (count && count > 0) {
-        console.info('Not implemented');
-      } else {
         return $http.get(this.endpointUrl);
-      }
+
     },
 
     signIn: function(user, pass) {
