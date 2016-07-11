@@ -1,4 +1,4 @@
-<ion-view view-title="News">
+<ion-view view-title="News" hide-back-button="true">
     <ion-content>
         <div>
             <div class="padding" collection-repeat="newsItem in news"
@@ -6,7 +6,7 @@
                 <div class="item">
                     <h2>{{newsItem.title}}</h2>
                 </div>
-                <div class="item item-body item-body-image-box"> 
+                <div class="item item-body item-body-image-box">
                     <img class="full-image" ng-src="{{newsItem.imageUrl}}">
                     <p ng-bind="newsItem.createdDate | date:'dd/MM/yyyy'">{{}}</p>
                 </div>

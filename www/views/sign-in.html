@@ -1,0 +1,22 @@
+<ion-view view-title="Sign In">
+    <ion-content padding="true">
+        <div>
+            <div class="list">
+              <label class="item item-input">
+                <span class="input-label">Username</span>
+                <input type="text" ng-model="username">
+              </label>
+              <label class="item item-input">
+                <span class="input-label">Password</span>
+                <input type="password" ng-model="password">
+              </label>
+              <button class="button button-block button-positive" ng-click="signIn(username, password)">
+                  Sign In
+              </button>
+              <p class="status-message">
+                {{ statusMessage }}
+              </p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -11,5 +11,6 @@ app.service('NewsService', function($http) {
         return $http.get(this.endpointUrl);
 
     }
+
   };
 })
