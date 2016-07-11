@@ -7,9 +7,7 @@ app.service('NewsService', function($http) {
     selectedNews: {},
 
     loadNews: function() {
-
         return $http.get(this.endpointUrl);
-
     }
 
   };
