@@ -20,6 +20,7 @@ app.service('NewsService', function($http) {
         password: pass
       };
       var postBody = angular.toJson(postObject);
+      console.dir(postBody);
       return $http.post(signInUrl, postBody);
     }
 
