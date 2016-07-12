@@ -13,14 +13,13 @@ app.service('NewsService', function($http) {
     },
 
     signIn: function(user, pass) {
-      var signInUrl = this.endpointUrl + 'login';
+      var signInUrl = this.endpointUrl + 'signin';
 
       var postObject = {
         username: user,
         password: pass
       };
       var postBody = angular.toJson(postObject);
-
       return $http.post(signInUrl, postBody);
     }
 
